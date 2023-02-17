@@ -5,7 +5,8 @@ I am not affiliated with the Yugen.to development team in any way.  In no way am
 
 # How to use?
 ## Windows
-Download the most recent installer exe from the releases tab and launch it.  Windows defender WILL catch this file as a virus, this is because it is not trusted by Microsoft.  I can assure you, it's a false positive.
+Download the most recent win64 package from the releases tab and launch `install.exe`.  Windows defender WILL catch this file as a virus, this is because it is not trusted by Microsoft.  I can assure you, it's a false positive.
+If you wish to run a portable version of this, it's really simple: navigate to the `win-unpacked` folder and execute the exe file in there.
 
 ## Linux
 Download the most recent AppImage from the releases tab and launch it.  If you so desire, you can create a desktop file for easy launch, a guide can be found here: https://www.maketecheasier.com/create-desktop-file-linux/
