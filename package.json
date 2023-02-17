@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "@cliqz/adblocker-electron": "^1.25.2",
+    "cross-fetch": "^3.1.5",
+    "fetch": "^1.1.0",
+    "typescript": "^4.9.5"
+  },
+  "build": {
+    "appId": "com.spektacle.yugen",
+    "productName": "Yugen Anime",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "extends": null
+  },
+  "name": "yugen",
+  "version": "1.0.0",
+  "description": "yugen electron wrapper by Spektacle",
+  "main": "./build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc",
+    "start": "npm run compile && electron .",
+    "ship": "npx electron-packager . yugen"
+  },
+  "author": "Spektacle",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^23.1.0",
+    "electron-builder": "^23.6.0",
+    "electron-packager": "^17.1.1"
+  }
+}
