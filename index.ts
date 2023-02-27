@@ -18,7 +18,7 @@ app.on('ready', () => {
         blocker.enableBlockingInSession(win.webContents.session);
     });
 
-    win.loadURL('https://yugen.to');
+    win.loadURL('https://yugenanime.ro');
     win.setTitle('Yugen Anime');
     win.setMenuBarVisibility(false);
     win.setAutoHideMenuBar(true);
