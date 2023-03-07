@@ -1,25 +1,51 @@
 "use strict";
-// Everything in the import block is required as 'dependency'
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const electron_1 = require("electron");
-const adblocker_electron_1 = require("@cliqz/adblocker-electron");
 const cross_fetch_1 = __importDefault(require("cross-fetch"));
-// Main window trigger
-electron_1.app.on('ready', () => {
-    console.log('App is Ready');
-    const win = new electron_1.BrowserWindow({
+const fs_1 = require("fs");
+const adblocker_electron_1 = require("@cliqz/adblocker-electron");
+function getUrlToLoad() {
+    let url = 'https://yugenanime.ro';
+    return url;
+}
+let mainWindow = null;
+async function createWindow() {
+    mainWindow = new electron_1.BrowserWindow({
+        webPreferences: {
+            nodeIntegration: false,
+            contextIsolation: false,
+            nodeIntegrationInSubFrames: true,
+        },
         width: 1000,
         height: 700,
-        icon: __dirname + '/img/icon512.png'
+        icon: __dirname + '/build/icons/512x512.png'
     });
-    adblocker_electron_1.ElectronBlocker.fromPrebuiltAdsAndTracking(cross_fetch_1.default).then((blocker) => {
-        blocker.enableBlockingInSession(win.webContents.session);
+    const blocker = await adblocker_electron_1.ElectronBlocker.fromLists(cross_fetch_1.default, adblocker_electron_1.fullLists, {
+        enableCompression: true,
+    }, {
+        path: 'engine.bin',
+        read: async (...args) => (0, fs_1.readFileSync)(...args),
+        write: async (...args) => (0, fs_1.writeFileSync)(...args),
     });
-    win.loadURL('https://yugen.to');
-    win.setTitle('Yugen Anime');
-    win.setMenuBarVisibility(false);
-    win.setAutoHideMenuBar(true);
+    blocker.enableBlockingInSession(mainWindow.webContents.session);
+    mainWindow.loadURL(getUrlToLoad());
+    mainWindow.setMenuBarVisibility(false);
+    mainWindow.setAutoHideMenuBar(true);
+    mainWindow.on('closed', () => {
+        mainWindow = null;
+    });
+}
+electron_1.app.on('ready', createWindow);
+electron_1.app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
+        electron_1.app.quit();
+    }
+});
+electron_1.app.on('activate', () => {
+    if (mainWindow === null) {
+        createWindow();
+    }
 });

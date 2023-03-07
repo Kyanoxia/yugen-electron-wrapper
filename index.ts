@@ -1,25 +1,64 @@
-// Everything in the import block is required as 'dependency'
-
-import { app, BrowserWindow, nativeImage } from 'electron';
-import { ElectronBlocker } from '@cliqz/adblocker-electron';
+import { app, BrowserWindow } from 'electron';
 import fetch from 'cross-fetch';
+import { readFileSync, writeFileSync } from 'fs';
 
-// Main window trigger
-app.on('ready', () => {
-    console.log('App is Ready');
+import { ElectronBlocker, fullLists } from '@cliqz/adblocker-electron';
 
-    const win = new BrowserWindow({
+function getUrlToLoad(): string {
+    let url = 'https://yugenanime.ro';
+
+    return url;
+}
+
+let mainWindow: BrowserWindow | null = null;
+
+async function createWindow() {
+    mainWindow = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: false,
+            contextIsolation: false,
+            nodeIntegrationInSubFrames: true,
+        },
         width: 1000,
         height: 700,
         icon: __dirname + '/build/icons/512x512.png'
     });
 
-    ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
-        blocker.enableBlockingInSession(win.webContents.session);
-    });
+    const blocker = await ElectronBlocker.fromLists(
+        fetch,
+        fullLists,
+        {
+            enableCompression: true,
+        },
+        {
+            path: 'engine.bin',
+            read: async (...args) => readFileSync(...args),
+            write: async (...args) => writeFileSync(...args),
+        },
+    );
+    blocker.enableBlockingInSession(mainWindow.webContents.session);
 
-    win.loadURL('https://yugenanime.ro');
-    win.setTitle('Yugen Anime');
-    win.setMenuBarVisibility(false);
-    win.setAutoHideMenuBar(true);
+    mainWindow.setBackgroundColor('#101112');
+
+    mainWindow.loadURL(getUrlToLoad());
+    mainWindow.setMenuBarVisibility(false);
+    mainWindow.setAutoHideMenuBar(true);
+
+    mainWindow.on('closed', () => {
+        mainWindow = null;
+    });
+}
+
+app.on('ready', createWindow);
+
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
+        app.quit();
+    }
+});
+
+app.on('activate', () => {
+    if (mainWindow === null) {
+        createWindow();
+    }
 });

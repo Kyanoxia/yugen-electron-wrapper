@@ -15,7 +15,7 @@
     "extends": null
   },
   "name": "yugen",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "yugen electron wrapper by Spektacle",
   "main": "./build/index.js",
   "scripts": {
