@@ -1,0 +1,2 @@
+assets/* linguist-vendored
+*.cs linguist-detectable=false
