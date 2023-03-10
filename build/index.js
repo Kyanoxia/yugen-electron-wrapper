@@ -21,6 +21,7 @@ async function createWindow() {
         },
         width: 1000,
         height: 700,
+        show: false,
         icon: __dirname + '/build/icons/512x512.png'
     });
     const blocker = await adblocker_electron_1.ElectronBlocker.fromLists(cross_fetch_1.default, adblocker_electron_1.fullLists, {
@@ -31,11 +32,15 @@ async function createWindow() {
         write: async (...args) => (0, fs_1.writeFileSync)(...args),
     });
     blocker.enableBlockingInSession(mainWindow.webContents.session);
+    mainWindow.setBackgroundColor('#101112');
     mainWindow.loadURL(getUrlToLoad());
     mainWindow.setMenuBarVisibility(false);
     mainWindow.setAutoHideMenuBar(true);
     mainWindow.on('closed', () => {
         mainWindow = null;
+    });
+    mainWindow.on('ready-to-show', () => {
+        mainWindow === null || mainWindow === void 0 ? void 0 : mainWindow.show();
     });
 }
 electron_1.app.on('ready', createWindow);

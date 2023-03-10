@@ -1,7 +1,6 @@
 import { app, BrowserWindow } from 'electron';
-import fetch from 'cross-fetch';
+import { fetch } from 'cross-fetch';
 import { readFileSync, writeFileSync } from 'fs';
-
 import { ElectronBlocker, fullLists } from '@cliqz/adblocker-electron';
 
 function getUrlToLoad(): string {
@@ -21,6 +20,7 @@ async function createWindow() {
         },
         width: 1000,
         height: 700,
+        show: false,
         icon: __dirname + '/build/icons/512x512.png'
     });
 
@@ -46,6 +46,10 @@ async function createWindow() {
 
     mainWindow.on('closed', () => {
         mainWindow = null;
+    });
+
+    mainWindow.on('ready-to-show', () => {
+        mainWindow?.show();
     });
 }
 
