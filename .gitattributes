@@ -1,2 +1,2 @@
-src/main/assets/* linguist-vendored
+assets/* linguist-vendored
 *.cs linguist-detectable=false
