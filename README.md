@@ -1,5 +1,5 @@
 # Yugen Electron Wrapper
-Cross-Platform Electron wrapper for Yugen, complete with AdBlock!
+Cross-Platform Electron wrapper written in TypeScript for Yugen, complete with AdBlock!
 ## Disclaimer
 I am not affiliated with the https://yugenanime.ro development team in any way.  In no way am I benefiting from your use of this wrapper.
 
