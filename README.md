@@ -9,7 +9,7 @@ Download the most recent win64 package from the releases tab and launch `install
 If you wish to run a portable version of this, it's really simple: navigate to the `win-unpacked` folder and execute the exe file in there.
 
 ## Linux
-Download the most recent AppImage from the releases tab and launch it.  If you so desire, you can create a desktop file for easy launch, a guide can be found here: https://www.maketecheasier.com/create-desktop-file-linux/
+Download the most recent AppImage from the releases tab and launch it.  If you so desire, you can create a desktop file for easy launch.  A guide can be found here: https://www.maketecheasier.com/create-desktop-file-linux/
 
 ## MacOS
 There is currently no MacOS build for this, since I do not have a comptible device.  To build for MacOS, you need a mac-specific npm package.  You're welcome to compile this and do it yourself though :)
