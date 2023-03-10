@@ -21,7 +21,7 @@ async function createWindow() {
         width: 1000,
         height: 700,
         show: false,
-        icon: __dirname + '/build/icons/512x512.png'
+        icon: __dirname + '/assets/icons/512x512.png'
     });
 
     const blocker = await ElectronBlocker.fromLists(
