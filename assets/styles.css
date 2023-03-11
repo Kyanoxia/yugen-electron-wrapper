@@ -10,7 +10,7 @@ body {
 
 header {
     background-color: #282B38 !important;
-    border: none;
+    border: none !important;
 }
 
 .header--logo {
