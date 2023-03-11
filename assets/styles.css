@@ -62,8 +62,13 @@ aside.navigation {
 }
 
 aside.navigation .nav-item {
-    font-size: 0 !important;
     border-radius: 10px !important;
+    font-size: 0 !important;
+    margin-top: 5px;
+}
+
+aside.navigation.is--expanded .nav-item {
+    font-size: 75% !important;
 }
 
 aside.navigation .nav-item svg {
