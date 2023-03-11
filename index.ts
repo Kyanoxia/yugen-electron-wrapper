@@ -30,7 +30,7 @@ async function createWindow() {
             nodeIntegrationInSubFrames: true,
             preload: path.join(__dirname, "preload.js"),
             sandbox: false,
-            webSecurity: false,
+            webSecurity: true,
         },
         width: 1000,
         height: 700,
