@@ -12,12 +12,7 @@ function getUrlToLoad(): string {
     return url;
 }
 
-// Unneeded, don't forget to delete when pushing to production
-function getCSS(): string {
-    let css = fs.readFileSync('assets/styles.css', 'utf-8');
-
-    return css;
-}
+process.env['APP_PATH'] = app.getAppPath();
 
 // Create browser Window
 let mainWindow: BrowserWindow | null = null;
@@ -35,7 +30,7 @@ async function createWindow() {
         width: 1000,
         height: 700,
         show: false,
-        icon: __dirname + '/assets/icons/512x512.png'
+        icon: process.env['APP_PATH'] + '/assets/icons/icon.png'
     });
 
     const blocker = await ElectronBlocker.fromLists(

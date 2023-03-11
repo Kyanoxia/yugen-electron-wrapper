@@ -27,18 +27,13 @@ const electron_1 = require("electron");
 const cross_fetch_1 = require("cross-fetch");
 const fs_1 = require("fs");
 const adblocker_electron_1 = require("@cliqz/adblocker-electron");
-const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 // Website URL goes in this function.  Returns a string URL
 function getUrlToLoad() {
     let url = 'https://yugenanime.ro';
     return url;
 }
-// Unneeded, don't forget to delete when pushing to production
-function getCSS() {
-    let css = fs.readFileSync('assets/styles.css', 'utf-8');
-    return css;
-}
+process.env['APP_PATH'] = electron_1.app.getAppPath();
 // Create browser Window
 let mainWindow = null;
 async function createWindow() {
@@ -49,12 +44,12 @@ async function createWindow() {
             nodeIntegrationInSubFrames: true,
             preload: path.join(__dirname, "preload.js"),
             sandbox: false,
-            webSecurity: false,
+            webSecurity: true,
         },
         width: 1000,
         height: 700,
         show: false,
-        icon: __dirname + '/assets/icons/512x512.png'
+        icon: process.env['APP_PATH'] + '/assets/icons/icon.png'
     });
     const blocker = await adblocker_electron_1.ElectronBlocker.fromLists(cross_fetch_1.fetch, adblocker_electron_1.fullLists, {
         enableCompression: true,

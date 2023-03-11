@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     link.id = 'custom-theme';
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = 'yugen://' + __dirname + '/../assets/styles.css';
+    link.href = 'yugen://' + process.env['APP_PATH'] + '/assets/styles.css';
     link.media = 'all';
     head.appendChild(link);
 
