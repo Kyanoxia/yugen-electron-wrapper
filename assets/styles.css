@@ -1,105 +1,105 @@
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap');
 
 * {
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Satoshi', sans-serif !important;
 }
 
 body {
-    background-color: #282B38;
+    background-color: #282B38 !important;
 }
 
 header {
-    background-color: #282B38;
+    background-color: #282B38 !important;
     border: none;
 }
 
 .header--logo {
-    content: "";
-    width: 200px;
-    height: 30px;
-    background-position: center;
-    background-image: url('https://cdn.glitch.global/a71f2c83-f4e1-4463-9cea-479191ee9342/yugen.png?v=1678192906940');
-    background-size: contain;
-    background-repeat: no-repeat;
+    content: "" !important;
+    width: 200px !important;
+    height: 30px !important;
+    background-position: center !important;
+    background-image: url('https://cdn.glitch.global/a71f2c83-f4e1-4463-9cea-479191ee9342/yugen.png?v=1678192906940') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
 }
 
 .header--logo img {
-    display: none;
+    display: none !important;
 }
 
 .header--center {
-    justify-content: center;
+    justify-content: center !important;
 }
 
 .header--center .search--container {
-    width: 300px;
-    margin: 0;
+    width: 300px !important;
+    margin: 0 !important;
 }
 
 .header--center,
 .header--end {
-    column-gap: 20px;
+    column-gap: 20px !important;
 }
 
 .main-input-box {
-    background-color: #21232e;
-    border: none;
-    padding: 1px 0 1px 15px;
+    background-color: #21232e !important;
+    border: none !important;
+    padding: 1px 0 1px 15px !important;
 }
 
 .main-input-submit {
-    background-color: #21232e;
+    background-color: #21232e !important;
 }
 
 .header--button-svg svg {
-    fill: #fffc;
+    fill: #fffc !important;
 }
 
 aside.navigation {
-    padding: 0 6px;
-    border: none;
-    background-color: #282B38;
+    padding: 0 6px !important;
+    border: none !important;
+    background-color: #282B38 !important;
 }
 
 aside.navigation .nav-item {
-    font-size: 0;
-    border-radius: 10px;
+    font-size: 0 !important;
+    border-radius: 10px !important;
 }
 
 aside.navigation .nav-item svg {
-    width: 29px;
+    width: 29px !important;
 }
 
 
 .btn {
-    background-color: #353845;
-    padding: 10px 15px 9px 15px;
-    font-weight: bold;
-    border-radius: 5px;
+    background-color: #353845 !important;
+    padding: 10px 15px 9px 15px !important;
+    font-weight: bold !important;
+    border-radius: 5px !important;
 }
 
 .btn:hover {
-    background-color: #4a4f61;
+    background-color: #4a4f61 !important;
 }
 
 .btn:active {
-    background-color: #1b1d25;
+    background-color: #1b1d25 !important;
 }
 
 .btn:focus {
-    outline: none;
-    background-color: #2f323f;
-    box-shadow: none;
+    outline: none !important;
+    background-color: #2f323f !important;
+    box-shadow: none !important;
 }
 
 /*     language filter */
 body > main > div:nth-child(1) > section.m-25-t > div.flex.justify-between.m-15-b {
-    margin-bottom: 40px;
+    margin-bottom: 40px !important;
 }
 
 /*     log in button */
 #end > a {
-    border: none;
+    border: none !important;
 }
 
 /*     editor's pick */
@@ -108,72 +108,72 @@ body > main > section {
 }
 
 .ya-title {
-    font-size: 3rem;
-    margin-bottom: 15px;
+    font-size: 3rem !important;
+    margin-bottom: 15px !important;
 }
 
 .ya-title > svg {
-    display: none;
+    display: none !important;
 }
 
 .swiper {
-    display: none;
+    display: none !important;
 }
 
 .lozad,
 a.ep-thumbnail {
-    border-radius: 10px;
+    border-radius: 10px !important;
 }
 
 .anime-poster__container {
-    border-radius: 9px;
+    border-radius: 9px !important;
 }
 
 .review--card {
-    border-radius: 10px;
-    background-color: #353845;
+    border-radius: 10px !important;
+    background-color: #353845 !important;
 }
 
 .review--header {
-    color: #749f7c;
+    color: #749f7c !important;
 }
 
 body > main > div:nth-child(1) > section.m-25-t > div.flex.justify-between.m-15-b > div:nth-child(1) {
-    display: flex;
-    gap: 10px;
+    display: flex !important;
+    gap: 10px !important;
 }
 
 .sel-lang-middle,
 .sel-lang-right {
-    border: none;
+    border: none !important;
 }
 
 .plyr {
-    border-radius: 10px;
-    overflow: hidden;
+    border-radius: 10px !important;
+    overflow: hidden !important;
 }
 
 .player--controls {
-    background-color: transparent;
-    box-shadow: none;
+    background-color: transparent !important;
+    box-shadow: none !important;
 }
 
 .box {
-    background-color: #303441;
-    box-shadow: none;
-    border-radius: 10px;
+    background-color: #303441 !important;
+    box-shadow: none !important;
+    border-radius: 10px !important;
 }
 
 .tag {
-    background-color: #01CC8F;
-    color: #282B38;
-    font-weight: 800;
-    border: none;
-    border-radius: 50px;
-    padding: 5px 15px 5px 15px;
+    background-color: #01CC8F !important;
+    color: #282B38 !important;
+    font-weight: 800 !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 5px 15px 5px 15px !important;
 }
 
 .tag:hover {
-    color: #01CC8F;
-    background-color: #282B38;
+    color: #01CC8F !important;
+    background-color: #282B38 !important;
 }

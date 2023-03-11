@@ -2,11 +2,18 @@ import { app, BrowserWindow } from 'electron';
 import { fetch } from 'cross-fetch';
 import { readFileSync, writeFileSync } from 'fs';
 import { ElectronBlocker, fullLists } from '@cliqz/adblocker-electron';
+import * as fs from 'fs';
 
 function getUrlToLoad(): string {
     let url = 'https://yugenanime.ro';
 
     return url;
+}
+
+function getCSS(): string {
+    let css = fs.readFileSync('assets/styles.css', 'utf-8');
+
+    return css;
 }
 
 let mainWindow: BrowserWindow | null = null;
@@ -49,7 +56,12 @@ async function createWindow() {
     });
 
     mainWindow.on('ready-to-show', () => {
+        mainWindow?.webContents.insertCSS(getCSS());
         mainWindow?.show();
+    });
+
+    mainWindow.on('page-title-updated', () => {
+        mainWindow?.webContents.insertCSS(getCSS());
     });
 }
 
