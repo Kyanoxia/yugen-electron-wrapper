@@ -12,6 +12,12 @@ function getUrlToLoad(): string {
     return url;
 }
 
+function getCSS(): string {
+    let css = fs.readFileSync(process.env['APP_PATH'] + '/assets/styles.css', 'utf-8');
+
+    return css;
+}
+
 process.env['APP_PATH'] = app.getAppPath();
 
 // Create browser Window
@@ -50,6 +56,7 @@ async function createWindow() {
     mainWindow.setBackgroundColor('#101112');
 
     mainWindow.loadURL(getUrlToLoad());
+
     mainWindow.setMenuBarVisibility(false);
     mainWindow.setAutoHideMenuBar(true);
 

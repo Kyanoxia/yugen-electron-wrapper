@@ -27,11 +27,16 @@ const electron_1 = require("electron");
 const cross_fetch_1 = require("cross-fetch");
 const fs_1 = require("fs");
 const adblocker_electron_1 = require("@cliqz/adblocker-electron");
+const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 // Website URL goes in this function.  Returns a string URL
 function getUrlToLoad() {
     let url = 'https://yugenanime.ro';
     return url;
+}
+function getCSS() {
+    let css = fs.readFileSync(process.env['APP_PATH'] + '/assets/styles.css', 'utf-8');
+    return css;
 }
 process.env['APP_PATH'] = electron_1.app.getAppPath();
 // Create browser Window

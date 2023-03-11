@@ -54,21 +54,37 @@ header {
     fill: #fffc;
 }
 
+.avatar {
+    border: none;
+}
+
 aside.navigation {
-    padding: 0 6px;
+    padding: 0 5px;
     border: none;
     background-color: #282B38;
+}
+
+aside.navigation.is--expanded {
+    padding: 15px 5px;
 }
 
 aside.navigation .nav-item {
     font-size: 0;
     border-radius: 10px;
+    margin-bottom: 5px;
 }
 
 aside.navigation .nav-item svg {
     width: 29px;
 }
 
+.banner--box {
+    background: #303441;
+}
+
+.banner.lozad {
+    border-radius: 10px 10px 0px 0px;
+}
 
 .btn {
     background-color: #353845;
