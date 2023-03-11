@@ -28,14 +28,18 @@ const cross_fetch_1 = require("cross-fetch");
 const fs_1 = require("fs");
 const adblocker_electron_1 = require("@cliqz/adblocker-electron");
 const fs = __importStar(require("fs"));
+const path = __importStar(require("path"));
+// Website URL goes in this function.  Returns a string URL
 function getUrlToLoad() {
     let url = 'https://yugenanime.ro';
     return url;
 }
+// Unneeded, don't forget to delete when pushing to production
 function getCSS() {
     let css = fs.readFileSync('assets/styles.css', 'utf-8');
     return css;
 }
+// Create browser Window
 let mainWindow = null;
 async function createWindow() {
     mainWindow = new electron_1.BrowserWindow({
@@ -43,6 +47,9 @@ async function createWindow() {
             nodeIntegration: false,
             contextIsolation: false,
             nodeIntegrationInSubFrames: true,
+            preload: path.join(__dirname, "preload.js"),
+            sandbox: false,
+            webSecurity: false,
         },
         width: 1000,
         height: 700,
@@ -65,14 +72,22 @@ async function createWindow() {
         mainWindow = null;
     });
     mainWindow.on('ready-to-show', () => {
-        mainWindow === null || mainWindow === void 0 ? void 0 : mainWindow.webContents.insertCSS(getCSS());
         mainWindow === null || mainWindow === void 0 ? void 0 : mainWindow.show();
     });
-    mainWindow.on('page-title-updated', () => {
-        mainWindow === null || mainWindow === void 0 ? void 0 : mainWindow.webContents.insertCSS(getCSS());
-    });
 }
-electron_1.app.on('ready', createWindow);
+electron_1.app.on('ready', () => {
+    const protocolName = 'yugen';
+    electron_1.protocol.registerFileProtocol(protocolName, (request, callback) => {
+        const url = request.url.replace(`${protocolName}://`, '');
+        try {
+            return callback(decodeURIComponent(url));
+        }
+        catch (error) {
+            console.error(error);
+        }
+    });
+    createWindow();
+});
 electron_1.app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
         electron_1.app.quit();

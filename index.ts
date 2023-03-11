@@ -1,21 +1,25 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, protocol } from 'electron';
 import { fetch } from 'cross-fetch';
 import { readFileSync, writeFileSync } from 'fs';
 import { ElectronBlocker, fullLists } from '@cliqz/adblocker-electron';
 import * as fs from 'fs';
+import * as path from "path";
 
+// Website URL goes in this function.  Returns a string URL
 function getUrlToLoad(): string {
     let url = 'https://yugenanime.ro';
 
     return url;
 }
 
+// Unneeded, don't forget to delete when pushing to production
 function getCSS(): string {
     let css = fs.readFileSync('assets/styles.css', 'utf-8');
 
     return css;
 }
 
+// Create browser Window
 let mainWindow: BrowserWindow | null = null;
 
 async function createWindow() {
@@ -24,6 +28,9 @@ async function createWindow() {
             nodeIntegration: false,
             contextIsolation: false,
             nodeIntegrationInSubFrames: true,
+            preload: path.join(__dirname, "preload.js"),
+            sandbox: false,
+            webSecurity: false,
         },
         width: 1000,
         height: 700,
@@ -56,16 +63,26 @@ async function createWindow() {
     });
 
     mainWindow.on('ready-to-show', () => {
-        mainWindow?.webContents.insertCSS(getCSS());
         mainWindow?.show();
-    });
-
-    mainWindow.on('page-title-updated', () => {
-        mainWindow?.webContents.insertCSS(getCSS());
     });
 }
 
-app.on('ready', createWindow);
+app.on('ready', () => {
+
+    const protocolName = 'yugen';
+
+    protocol.registerFileProtocol(protocolName, (request, callback) => {
+        const url = request.url.replace(`${protocolName}://`, '');
+        try {
+            return callback(decodeURIComponent(url));
+        }
+        catch (error) {
+            console.error(error);
+        }
+    });
+
+    createWindow();
+});
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
