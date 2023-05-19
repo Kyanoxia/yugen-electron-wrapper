@@ -31,7 +31,7 @@ const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 // Website URL goes in this function.  Returns a string URL
 function getUrlToLoad() {
-    let url = 'https://yugenanime.ro';
+    let url = 'https://yugen.to';
     return url;
 }
 function getCSS() {

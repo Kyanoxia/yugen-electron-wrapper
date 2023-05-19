@@ -37,4 +37,4 @@ And you're done!  Have fun developing!
 
 # To-do
 
-~ Build for MacOS - Doing this will be rather difficult because I don't have codesigning :(
+~ Build for MacOS - Doing this will be rather difficult because I don't have a proper codesign cert :(
