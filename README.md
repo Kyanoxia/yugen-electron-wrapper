@@ -2,7 +2,7 @@
 Cross-Platform Electron wrapper written in TypeScript for Yugen, complete with AdBlock!
 Now uses the amazing Yuguen Dark Ark theme, created by the amazing cybrejon - check out their theme here: https://github.com/cybrejon/yugen-arc-dark-theme
 ## Disclaimer
-I am not affiliated with the https://yugenanime.ro development team in any way.  In no way am I benefiting from your use of this wrapper.
+I am not affiliated with the https://yugen.to development team in any way.  In no way am I benefiting from your use of this wrapper.
 
 # How to use?
 ## Windows
@@ -13,7 +13,7 @@ If you wish to run a portable version of this, it's really simple: navigate to t
 Download the most recent AppImage from the releases tab and launch it.  If you so desire, you can create a desktop file for easy launch.  A guide can be found here: https://www.maketecheasier.com/create-desktop-file-linux/
 
 ## MacOS
-There is currently no MacOS build for this, since I do not have a comptible device.  To build for MacOS, you need a mac-specific npm package.  You're welcome to compile this and do it yourself though :)
+There is currently no MacOS build for this, since I do not have a proper codesign cert.  To build for MacOS, you need a mac-specific npm package and a developer account.  You're welcome to compile this and do it yourself though :)
 
 # Want to develop?
 ## Dependencies
