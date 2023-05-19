@@ -34,3 +34,7 @@ Lastly, install the required packages:
 npm install
 ```
 And you're done!  Have fun developing!
+
+# To-do
+
+~ Build for MacOS - Doing this will be rather difficult because I don't have codesigning :(
