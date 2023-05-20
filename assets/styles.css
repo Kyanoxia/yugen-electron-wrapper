@@ -8,9 +8,31 @@ body {
     background-color: #282B38;
 }
 
+body::-webkit-scrollbar {
+    display:none;
+}
+
 header {
+    top: 30px;
+    height: fit-content;
+    position: sticky;
+    padding-bottom: 15px;
+    background-color: #282b38;
+}
+
+.app-bar {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    height: 30px;
+    z-index: 1000;
+    -webkit-app-region: drag;
     background-color: #282B38;
-    border: none;
+    overflow:hidden;
+}
+
+.header--container {
+    background-color: #282B38;
 }
 
 .header--logo {
@@ -18,7 +40,7 @@ header {
     width: 200px;
     height: 30px;
     background-position: center;
-    background-image: url('https://cdn.glitch.global/a71f2c83-f4e1-4463-9cea-479191ee9342/yugen.png?v=1678192906940');
+    background-image: url("../assets/img/yugen-logo.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -59,7 +81,8 @@ header {
 }
 
 aside.navigation {
-    padding: 0 5px;
+    padding: 0px 5px;
+    margin-top: 25px;
     border: none;
     background-color: #282B38;
 }

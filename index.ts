@@ -2,7 +2,6 @@ import { app, BrowserWindow, protocol } from 'electron';
 import { fetch } from 'cross-fetch';
 import { readFileSync, writeFileSync } from 'fs';
 import { ElectronBlocker, fullLists } from '@cliqz/adblocker-electron';
-import * as fs from 'fs';
 import * as path from "path";
 
 // Website URL goes in this function.  Returns a string URL
@@ -10,12 +9,6 @@ function getUrlToLoad(): string {
     let url = 'https://yugen.to';
 
     return url;
-}
-
-function getCSS(): string {
-    let css = fs.readFileSync(process.env['APP_PATH'] + '/assets/styles.css', 'utf-8');
-
-    return css;
 }
 
 process.env['APP_PATH'] = app.getAppPath();
@@ -36,6 +29,7 @@ async function createWindow() {
         width: 1000,
         height: 700,
         show: false,
+        titleBarStyle: 'hidden',
         icon: process.env['APP_PATH'] + '/assets/icons/icon.png'
     });
 
