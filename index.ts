@@ -26,13 +26,13 @@ async function createWindow() {
             sandbox: false,
             webSecurity: true,
         },
-        width: 1000,
+        width: 1500,
         height: 700,
-        show: false,
         titleBarStyle: 'hidden',
         icon: process.env['APP_PATH'] + '/assets/icons/icon.png'
     });
 
+    // Initialize AdBlocking
     const blocker = await ElectronBlocker.fromLists(
         fetch,
         fullLists,
@@ -48,9 +48,7 @@ async function createWindow() {
     blocker.enableBlockingInSession(mainWindow.webContents.session);
 
     mainWindow.setBackgroundColor('#101112');
-
     mainWindow.loadURL(getUrlToLoad());
-
     mainWindow.setMenuBarVisibility(false);
     mainWindow.setAutoHideMenuBar(true);
 

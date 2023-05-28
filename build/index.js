@@ -46,12 +46,12 @@ async function createWindow() {
             sandbox: false,
             webSecurity: true,
         },
-        width: 1000,
+        width: 1500,
         height: 700,
-        show: false,
         titleBarStyle: 'hidden',
         icon: process.env['APP_PATH'] + '/assets/icons/icon.png'
     });
+    // Initialize AdBlocking
     const blocker = await adblocker_electron_1.ElectronBlocker.fromLists(cross_fetch_1.fetch, adblocker_electron_1.fullLists, {
         enableCompression: true,
     }, {
