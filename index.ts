@@ -40,7 +40,7 @@ async function createWindow() {
             enableCompression: true,
         },
         {
-            path: 'engine.bin',
+            path: process.env['APP_PATH'] + 'engine.bin',
             read: async (...args) => readFileSync(...args),
             write: async (...args) => writeFileSync(...args),
         },

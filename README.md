@@ -2,7 +2,7 @@
 Cross-Platform Electron wrapper written in TypeScript for Yugen, complete with AdBlock!  
 Now uses the amazing Yugen Arc Dark theme, created by cybrejon - check out their theme here: https://github.com/cybrejon/yugen-arc-dark-theme  
 ```
-main build status: 82% (ready for build - Windows/Linux)
+main build status: 100% (ready for build - Windows/macOS/Linux)
 ```
 ![screenshot.png](https://github.com/SpektacleFR/yugen-electron-wrapper/blob/f1fcbd2aaf98414e534668bd768ed601e107e4e2/home.png)
 

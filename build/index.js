@@ -55,7 +55,7 @@ async function createWindow() {
     const blocker = await adblocker_electron_1.ElectronBlocker.fromLists(cross_fetch_1.fetch, adblocker_electron_1.fullLists, {
         enableCompression: true,
     }, {
-        path: 'engine.bin',
+        path: process.env['APP_PATH'] + 'engine.bin',
         read: async (...args) => (0, fs_1.readFileSync)(...args),
         write: async (...args) => (0, fs_1.writeFileSync)(...args),
     });
