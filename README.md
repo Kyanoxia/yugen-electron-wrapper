@@ -19,8 +19,7 @@ If you wish to run a portable version of this, it's really simple: navigate to t
 Download the most recent AppImage from the releases tab and launch it.  If you so desire, you can create a desktop file for easy launch.  A guide can be found here: https://www.maketecheasier.com/create-desktop-file-linux/
 
 ## macOS
-~~There is currently no MacOS build for this, since I do not have a proper codesign cert.  To build for MacOS, you need a mac-specific npm package and a developer account.  You're welcome to compile this and do it yourself though :)~~
-macOS Build coming soon ;)
+Download the most recent macOS package from the releases tab and launch `Yugen Anime.dmg`.  If you want a portable version, you can just run `Yugen Anime.app`.
 
 # Want to develop?
 ## Dependencies
