@@ -17,7 +17,7 @@
     ],
     "extends": null
   },
-  "name": "Yugen Anime",
+  "name": "yugen",
   "version": "1.2.1",
   "description": "Yugen electron wrapper by Spektacle",
   "main": "./build/index.js",

@@ -7,6 +7,10 @@ main build status: 100% (ready for build - Windows/macOS/Linux)
 ![screenshot.png](https://github.com/SpektacleFR/yugen-electron-wrapper/blob/f1fcbd2aaf98414e534668bd768ed601e107e4e2/home.png)
 
 # How to use?
+
+## Notice:
+This was developed on an M2 Max MacBook Pro, so releases will only be available for ARM64 versions of the operating systems.  If you want to build for others, go right ahead, and I'll be happy to add them to the release.
+
 ## Windows
 Download the most recent win64 package from the releases tab and launch `install.exe`.  Windows defender WILL catch this file as a virus, this is because it is not trusted by Microsoft.  I can assure you, it's a false positive.
 If you wish to run a portable version of this, it's really simple: navigate to the `win-unpacked` folder and execute the exe file in there.
