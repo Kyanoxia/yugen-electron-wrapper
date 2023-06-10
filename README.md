@@ -4,6 +4,8 @@ Now uses the amazing Yugen Arc Dark theme, created by cybrejon - check out their
 ```
 main build status: 82% (ready for build - Windows/Linux)
 ```
+![screenshot.png](https://github.com/SpektacleFR/yugen-electron-wrapper/blob/f1fcbd2aaf98414e534668bd768ed601e107e4e2/home.png)
+
 ## Disclaimer
 I am not affiliated with the https://yugen.to development team in any way.  In no way am I benefiting from your use of this wrapper.
 
