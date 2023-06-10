@@ -43,4 +43,4 @@ And you're done!  Have fun developing!
 # To-do
 
 - [x] Build for MacOS - Doing this will be rather difficult because I don't have a proper codesign cert :(
-- [ ] Fix AdBlock crashing the MacOS APP build
+- [x] Fix AdBlock crashing the MacOS APP build
