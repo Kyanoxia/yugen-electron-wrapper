@@ -6,7 +6,7 @@ import * as path from "path";
 
 // Website URL goes in this function.  Returns a string URL
 function getUrlToLoad(): string {
-    let url = 'https://yugen.to';
+    let url = 'https://yugenanime.tv';
 
     return url;
 }
@@ -26,7 +26,7 @@ async function createWindow() {
             sandbox: false,
             webSecurity: true,
         },
-        width: 1500,
+        width: 1000,
         height: 700,
         titleBarStyle: 'hidden',
         icon: process.env['APP_PATH'] + '/assets/icons/icon.png'

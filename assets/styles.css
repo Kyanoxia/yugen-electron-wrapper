@@ -12,6 +12,10 @@ body::-webkit-scrollbar {
     display:none;
 }
 
+.bg-ssp-7754 {
+    display:none;
+}
+
 header {
     top: 30px;
     height: fit-content;
