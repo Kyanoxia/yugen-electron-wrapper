@@ -22,7 +22,9 @@ Download the most recent macOS package from the releases tab and launch `Yugen A
 
 # Want to develop?
 ## Dependencies
-You must have NodeJS installed and NPM for package management.
+You must have NodeJS and NPM installed.
+- https://nodejs.org/
+- https://www.npmjs.com/
 
 ## Downloading the Project
 
