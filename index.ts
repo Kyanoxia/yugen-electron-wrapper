@@ -6,7 +6,7 @@ import * as path from "path";
 
 // Website URL goes in this function.  Returns a string URL
 function getUrlToLoad(): string {
-    let url = 'https://yugenanime.tv';
+    let url = 'https://yugenanime.tv/';
 
     return url;
 }

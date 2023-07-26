@@ -30,7 +30,7 @@ const adblocker_electron_1 = require("@cliqz/adblocker-electron");
 const path = __importStar(require("path"));
 // Website URL goes in this function.  Returns a string URL
 function getUrlToLoad() {
-    let url = 'https://yugenanime.tv';
+    let url = 'https://yugenanime.tv/';
     return url;
 }
 process.env['APP_PATH'] = electron_1.app.getAppPath();
